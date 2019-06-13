@@ -54,11 +54,28 @@ Towards Developing a Network Intrusion Detection System using Deep Learning Tech
 
 # Results
 
-## 03-01-2018.csv Dataset
-
-| Framework | Accuracy | Std-deviation | time |
-| --------- | :------: | ------------- | ---- |
-| Fastai    |
+| Dataset    | Framework         | Accuracy (%) | Std-deviation | ~ time (min) |
+| ---------- | ----------------- | :----------: | ------------- | ------------ |
+| 02-14-2018 | Fastai            |    99.85     | 0.07          | \*           |
+| 02-14-2018 | Keras-Tensorflow  |      \*      | \*            | \*           |
+| 02-14-2018 | Keras-Theano      |      \*      | \*            | \*           |
+| 02-14-2018 | Pytorch           |      \*      | \*            | \*           |
+| 02-15-2018 | Fastai            |    99.98     | 0.01          | 25           |
+| 02-15-2018 | Keras-Tensorfflow |      \*      | \*            | \*           |
+| 02-15-2018 | Keras-Theano      |      \*      | \*            | \*           |
+| 02-15-2018 | Pytorch           |      \*      | \*            | \*           |
+| 02-16-2018 | Fastai            |    100.00    | 0.00          | 16           |
+| 02-16-2018 | Keras-Tensorflow  |      \*      | \*            | \*           |
+| 02-16-2018 | Keras-Theano      |      \*      | \*            | \*           |
+| 02-16-2018 | Pytorch           |      \*      | \*            | \*           |
+| 03-01-2018 | Fastai            |      87      | 0.00          | 5            |
+| 03-01-2018 | Keras-Tensorflow  |      \*      | \*            | \*           |
+| 03-01-2018 | Keras-Theano      |      \*      | \*            | \*           |
+| 03-01-2018 | Pytorch           |      \*      | \*            | \*           |
+| 03-02-2018 | Fastai            |      \*      | \*            | \*           |
+| 03-02-2018 | Keras-Tensorflow  |      \*      | \*            | \*           |
+| 03-02-2018 | Keras-Theano      |      \*      | \*            | \*           |
+| 03-02-2018 | Pytorch           |      \*      | \*            | \*           |
 
 # References
 
