@@ -1,4 +1,0 @@
-03-01-2018--6-14:
-  These images were generated from the Fastai_notebook with no changes to the original fastai-experiments.py file. These runs returned loss=0.50781184 and accuracy=85.15%
-03-02-2018--6-15:
-  These images were generated from the Fastai_notebook with no changes to the original fastai-experiments.py file. These runs returned loss=0.85127222 and accuracy=99.72%
