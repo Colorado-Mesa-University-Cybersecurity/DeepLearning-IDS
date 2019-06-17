@@ -36,8 +36,9 @@ Towards Developing a Network Intrusion Detection System using Deep Learning Tech
 -   perfomance results using various deep learning frameworks are compared
 -   10-fold cross-validation techniques was used to validate the model
 
-## Fastai - fast.ai
+## Fastai
 
+-   https://www.fast.ai/
 -   uses pytorch as the backend
 
 ## Keras
