@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from keras.utils.np_utils import to_categorical, normalize
 from sklearn.utils import shuffle
+from tensorflow.keras.callbacks import TensorBoard
+import time
 
 dataPath = 'CleanedTrafficData'
 resultPath = 'results_keras_tensorflow'
@@ -83,6 +85,13 @@ def binary_baseline_model():
     return model
 
 def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
+    
+    #Creating data for analysis
+    fn_name="multiclass_baseline_model"
+    model_name = "{}_{}_{}_{}_{}".format(dataFile, optimizer, epochs, batch_size, fn_name)
+    #$ tensorboard --logdir=logs/
+    tensorboard = TensorBoard(log_dir='logs/{}'.format(model_name))
+    
     seed = 7
     np.random.seed(seed)
     cvscores = []
@@ -102,8 +111,7 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     #define 5-fold cross validation test harness
     inputDim = len(data_x[0])
     print('inputdim = ', inputDim)
-    fn_name="multiclass_baseline_model"
-    model_name = "{}_{}_{}_{}_{}".format(dataFile, optimizer, epochs, batch_size, fn_name)
+    
   
     #Separate out data
     X_train, X_test, y_train, y_test = train_test_split(data_x, dummy_y, test_size=0.2)
@@ -113,10 +121,10 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
 
     #train
     print("Training " + dataFile + "...")
-    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1)
+    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1, callbacks=[tensorboard])
     
     #save model
-    model.save(resultPath + "/models/" + model_name + ".model")
+    model.save("{}/models/{}_{}.model".format(resultPath, model_name, int(time.time())))
     
     scores = model.evaluate(X_test, y_test, verbose=1)
     acc, std_dev = results.mean()*100, results.std()*100
@@ -126,8 +134,6 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     with open('{}.result'.format(resultFile), 'a') as fout:
         fout.write('accuracy: {:.2f} std-dev: {:.2f}\n'.format(acc, std_dev))
         
-        
-#Run experiments on these files
 experiment('02-14-2018.csv')
 experiment('02-15-2018.csv')
 experiment('02-16-2018.csv')
