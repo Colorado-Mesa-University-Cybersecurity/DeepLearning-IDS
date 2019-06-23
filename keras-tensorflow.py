@@ -57,16 +57,18 @@ def loadData(fileName):
         df.to_pickle(pickleDump)
     return df
 
-def multiclass_baseline_model(inputDim=-1):
+def multiclass_baseline_model(inputDim=-1, out_shape=(-1,)):
     model = Sequential()
-    model.add(Dense(79, activation='relu', input_shape=(inputDim,)))
-    model.add(Dense(128, activation='relu'))
-    
-    model.add(Dense(3, activation='softmax')) #This is the output layer
-    
-    model.compile(optimizer='adam',
-                 loss='categorical_crossentropy',
-                 metrics=['accuracy'])
+    if inputDim > 0 and out_shape[1] > 0:
+        model.add(Dense(79, activation='relu', input_shape=(inputDim,)))
+        print(f"out_shape[1]:{out_shape[1]}")
+        model.add(Dense(128, activation='relu'))
+        
+        model.add(Dense(out_shape[1], activation='softmax')) #This is the output layer
+        
+        model.compile(optimizer='adam',
+                     loss='categorical_crossentropy',
+                     metrics=['accuracy'])
     return model
 
 def binary_baseline_model():
@@ -122,7 +124,7 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     X_train, X_test, y_train, y_test = train_test_split(data_x, dummy_y, test_size=0.2)
     
     #create model
-    model = multiclass_baseline_model(inputDim)
+    model = multiclass_baseline_model(inputDim, y_train.shape)
 
     #train
     print("Training " + dataFile + "...")
