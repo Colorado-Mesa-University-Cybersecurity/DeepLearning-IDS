@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import operator
 
-from keras.models import Sequential
+from keras.models import Sequential, load_model
 from keras.layers import Dense, Activation
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
@@ -84,11 +84,16 @@ def binary_baseline_model():
                  metrics=['accuracy'])
     return model
 
+def load_model(model_name):
+    #Change to your own path
+    model = load_model('results_keras_tensorflow/models/{}'.format(model_name))
+    return model
+
 def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     
     #Creating data for analysis
     fn_name="multiclass_baseline_model"
-    model_name = "{}_{}_{}_{}_{}".format(dataFile, optimizer, epochs, batch_size, fn_name)
+    model_name = "{}_{}_{}_{}_{}_{}".format(dataFile, optimizer, epochs, batch_size, fn_name, int(time.time()))
     #$ tensorboard --logdir=logs/
     tensorboard = TensorBoard(log_dir='logs/{}'.format(model_name))
     
@@ -124,20 +129,20 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1, callbacks=[tensorboard])
     
     #save model
-    model.save("{}/models/{}_{}.model".format(resultPath, model_name, int(time.time())))
+    model.save("{}/models/{}.model".format(resultPath, model_name))
     
     scores = model.evaluate(X_test, y_test, verbose=1)
     acc, std_dev = results.mean()*100, results.std()*100
+    print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
     print('Baseline: accuracy: {:.2f}%: std-dev: {:.2f}%'.format(acc, std_dev))
     
     resultFile = os.path.join(resultPath, dataFile)
     with open('{}.result'.format(resultFile), 'a') as fout:
         fout.write('accuracy: {:.2f} std-dev: {:.2f}\n'.format(acc, std_dev))
         
-experiment('02-14-2018.csv')
-experiment('02-15-2018.csv')
-experiment('02-16-2018.csv')
-experiment('02-22-2018.csv')
-experiment('02-23-2018.csv')
-experiment('03-01-2018.csv')
-experiment('03-02-2018.csv')
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python(3) keras-tensorflow.py inputFile.csv (do not include full path to file)")
+    else:
+        experiment(sys.argv[1])
+        
