@@ -86,7 +86,7 @@ def binary_baseline_model():
                  metrics=['accuracy'])
     return model
 
-def load_model(model_name):
+def load_model_csv(model_name):
     #Change to your own path
     model = load_model('results_keras_tensorflow/models/{}'.format(model_name))
     return model
@@ -134,13 +134,14 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     model.save("{}/models/{}.model".format(resultPath, model_name))
     
     scores = model.evaluate(X_test, y_test, verbose=1)
-    acc, std_dev = results.mean()*100, results.std()*100
-    print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
-    print('Baseline: accuracy: {:.2f}%: std-dev: {:.2f}%'.format(acc, std_dev))
-    
+    print(model.metrics_names)
+    acc, loss = scores[1]*100, scores[0]*100
+    print('Baseline: accuracy: {:.2f}%: loss: {:.2f}'.format(acc, loss))
+
     resultFile = os.path.join(resultPath, dataFile)
     with open('{}.result'.format(resultFile), 'a') as fout:
-        fout.write('accuracy: {:.2f} std-dev: {:.2f}\n'.format(acc, std_dev))
+        fout.write('{} results...'.format(model_name))
+        fout.write('\taccuracy: {:.2f} loss: {:.2f}\n'.format(acc, loss))
         
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -148,3 +149,4 @@ if __name__ == "__main__":
     else:
         experiment(sys.argv[1])
         
+
