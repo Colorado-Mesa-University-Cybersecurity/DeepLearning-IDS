@@ -73,7 +73,7 @@ Towards Developing a Network Intrusion Detection System using Deep Learning Tech
 | 02-22-2018 | Keras-Tensorflow  |    99.97     |   \*    |      \*      |
 | 02-22-2018 | Keras-Theano      |      \*      |   \*    |      \*      |
 | 02-22-2018 | Pytorch           |      \*      |   \*    |      \*      |
-| 02-23-2018 | Fastai            |      \*      |   \*    |      \*      |
+| 02-23-2018 | Fastai            |    99.92     |  0.00   |     120      |
 | 02-23-2018 | Keras-Tensorflow  |    99.94     |   \*    |      \*      |
 | 02-23-2018 | Keras-Theano      |      \*      |   \*    |      \*      |
 | 02-23-2018 | Pytorch           |      \*      |   \*    |      \*      |
