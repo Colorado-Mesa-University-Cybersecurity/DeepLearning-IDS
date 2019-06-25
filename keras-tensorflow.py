@@ -5,25 +5,23 @@ import numpy as np
 import pandas as pd
 import operator
 
-from keras import backend as K
-from keras.models import Sequential
+from keras.models import Sequential, load_model
 from keras.layers import Dense, Activation
-from sklearn.model_selection import KFold, StratifiedKFold
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-from keras.utils.np_utils import to_categorical
+from keras.utils.np_utils import to_categorical, normalize
 from sklearn.utils import shuffle
-from sklearn.model_selection import cross_val_score
-from keras.wrappers.scikit_learn import KerasClassifier
+from tensorflow.keras.callbacks import TensorBoard
+import time
 
-assert K.backend() == 'tensorflow', 'set backend to tensorflow in ~/.keras/keras.json file'
-
-dataPath = 'CleanedTrafficData'  # use your path
-resultPath = 'results/tensorflow'
+dataPath = 'CleanedTrafficData'
+resultPath = 'results_keras_tensorflow'
 if not os.path.exists(resultPath):
     print('result path {} created.'.format(resultPath))
     os.mkdir(resultPath)
-
+    
 dep_var = 'Label'
+
 cat_names = ['Dst Port', 'Protocol']
 cont_names = ['Timestamp', 'Flow Duration', 'Tot Fwd Pkts',
               'Tot Bwd Pkts', 'TotLen Fwd Pkts', 'TotLen Bwd Pkts', 'Fwd Pkt Len Max',
@@ -47,7 +45,6 @@ cont_names = ['Timestamp', 'Flow Duration', 'Tot Fwd Pkts',
               'Fwd Seg Size Min', 'Active Mean', 'Active Std', 'Active Max',
               'Active Min', 'Idle Mean', 'Idle Std', 'Idle Max', 'Idle Min']
 
-
 def loadData(fileName):
     dataFile = os.path.join(dataPath, fileName)
     pickleDump = '{}.pickle'.format(dataFile)
@@ -60,79 +57,96 @@ def loadData(fileName):
         df.to_pickle(pickleDump)
     return df
 
-
-def multilass_baseline_model():
-    # https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
+def multiclass_baseline_model(inputDim=-1, out_shape=(-1,)):
     model = Sequential()
-    model.add(Dense(79, activation='relu', input_dim=79))
-    model.add(Dense(79, activation='relu'))
-    model.add(Dense(3, activation='softmax')) # softmax recommended for multi-class classification problem
-    # compile model - for multi-class classifier
-
-    model.compile(optimizer='adam',
-                  loss='categorical_crossentropy', metrics=['accuracy'])
+    if inputDim > 0 and out_shape[1] > 0:
+        model.add(Dense(79, activation='relu', input_shape=(inputDim,)))
+        print(f"out_shape[1]:{out_shape[1]}")
+        model.add(Dense(128, activation='relu'))
+        
+        model.add(Dense(out_shape[1], activation='softmax')) #This is the output layer
+        
+        model.compile(optimizer='adam',
+                     loss='categorical_crossentropy',
+                     metrics=['accuracy'])
     return model
-
 
 def binary_baseline_model():
-    # https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
     model = Sequential()
-    model.add(Dense(79, activation='relu', input_dim=79))
-    model.add(Dense(79, activation='relu', input_dim=79))
-    model.add(Dense(79, activation='relu', input_dim=79))
-
-    #model.add(Dense(79, activation='relu'))
-    # sigmoid
-    model.add(Dense(2, activation='softmax'))
-    # compile model - for multi-class classifier
-
+    model.add(Dense(79, activation='relu', input_shape=(79,)))
+    model.add(Dense(64, activation='relu'))
+    model.add(Dense(64, activation='relu'))
+    model.add(Dense(64, activation='relu'))
+    model.add(Dense(64, activation='relu'))
+    
+    model.add(Dense(2, activation='softmax')) #Output layer
+    
     model.compile(optimizer='adam',
-                  loss='binary_crossentropy', metrics=['accuracy'])
+                 loss='binary_crossentropy',
+                 metrics=['accuracy'])
     return model
 
+def load_model_csv(model_name):
+    #Change to your own path
+    model = load_model('results_keras_tensorflow/models/{}'.format(model_name))
+    return model
 
-def experiment(dataFile, optimizer, epochs=10, batch_size=100):
+def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
+    
+    #Creating data for analysis
+    fn_name="multiclass_baseline_model"
+    model_name = "{}_{}_{}_{}_{}_{}".format(dataFile, optimizer, epochs, batch_size, fn_name, int(time.time()))
+    #$ tensorboard --logdir=logs/
+    tensorboard = TensorBoard(log_dir='logs/{}'.format(model_name))
+    
     seed = 7
     np.random.seed(seed)
     cvscores = []
     print('optimizer: {} epochs: {} batch_size: {}'.format(
         optimizer, epochs, batch_size))
+    
     data = loadData(dataFile)
     data_y = data.pop('Label')
-    # transform named labels into numberical values
+    
+    #transform named labels into numerical values
     encoder = LabelEncoder()
     encoder.fit(data_y)
     data_y = encoder.transform(data_y)
     dummy_y = to_categorical(data_y)
-    data_x = data.values
-    # define 5-fold cross validation test harness
-    kfold = KFold(n_splits=10, shuffle=True, random_state=seed)
+    data_x = normalize(data.values)
+    
+    #define 5-fold cross validation test harness
     inputDim = len(data_x[0])
-    print('inputdim =', inputDim)
-    estimater = KerasClassifier(
-        build_fn=binary_baseline_model, epochs=epochs, batch_size=batch_size, verbose=1)
-    results = cross_val_score(estimater, data_x, dummy_y, cv=kfold)
-    # create model\
-    # build a simple, fully-connected network (multi-layer perceptron)
+    print('inputdim = ', inputDim)
+    
+  
+    #Separate out data
+    X_train, X_test, y_train, y_test = train_test_split(data_x, dummy_y, test_size=0.2)
+    
+    #create model
+    model = multiclass_baseline_model(inputDim, y_train.shape)
 
-    # train the model, iterating on the data in batches of batch_size
-    # model.fit(data_x[train], data_y[train], epochs=epochs,
-    #          batch_size = batch_size, verbose = 0)
-    # evaluate the model
-    # scores = model.evaluate(data_x[test], data_y[test], verbose=0)
-    acc, std_dev = results.mean()*100, results.std()*100
-    print('Baseline: accuracy: {:.2f}%: std-dev: {:.2f}%'.format(acc, std_dev))
-    # cvscores.append(scores[1]*100)
+    #train
+    print("Training " + dataFile + "...")
+    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1, callbacks=[tensorboard])
+    
+    #save model
+    model.save("{}/models/{}.model".format(resultPath, model_name))
+    
+    scores = model.evaluate(X_test, y_test, verbose=1)
+    print(model.metrics_names)
+    acc, loss = scores[1]*100, scores[0]*100
+    print('Baseline: accuracy: {:.2f}%: loss: {:.2f}'.format(acc, loss))
+
     resultFile = os.path.join(resultPath, dataFile)
     with open('{}.result'.format(resultFile), 'a') as fout:
-        fout.write('accuracy: {:.2f} std-dev: {:.2f}\n'.format(acc, std_dev))
-
-
+        fout.write('{} results...'.format(model_name))
+        fout.write('\taccuracy: {:.2f} loss: {:.2f}\n'.format(acc, loss))
+        
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print('Usage: python kerasframeworks.py inputFile.csv optimizer')
-        print('optimizers: adam, rmsprop, sgd, adagrad, ')
-        sys.exit()
+    if len(sys.argv) < 2:
+        print("Usage: python(3) keras-tensorflow.py inputFile.csv (do not include full path to file)")
+    else:
+        experiment(sys.argv[1])
+        
 
-    # getData()
-    experiment(sys.argv[1], sys.argv[2])

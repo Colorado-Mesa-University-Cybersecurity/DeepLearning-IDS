@@ -7,18 +7,18 @@
  
 | Data File | Accuracy | Loss |
 | --------- | -------- | ---- |
-| 02-14-2018.csv | 99.99% | 0.050000
-| 02-15-2018.csv | 99.99% | 0.050000
-| 02-16-2018.csv | 99.99% | 0.050000
-| 02-22-2018.csv | 99.99% | 0.050000
-| 02-23-2018.csv | 99.99% | 0.050000
-| 03-01-2018.csv | 85.00% | 0.050000
-| 03-02-2018.csv | 99.99% | 0.050000
+| 02-14-2018.csv | 99.99% | 0.00212
+| 02-15-2018.csv | 99.86% | 0.02500
+| 02-16-2018.csv | 99.97% | 324160
+| 02-22-2018.csv | 99.97% | 0.00221
+| 02-23-2018.csv | 99.82% | 0.06295
+| 03-01-2018.csv | 87.14% | 0.37611
+| 03-02-2018.csv | 99.72% | 0.85127
 
 ### Confusion Matrices
  02-14-2018 | 02-15-2018 | 02-16-2018
  :---------:|:----------:|:----------:
- ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/02-14-2018--6-15(1).png) | In Progress | ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/02-16-2018--6-15(1).png)  
+ ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/02-14-2018--6-15(1).png) | ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/02-15-2018--6-24(1).png) | ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/02-16-2018--6-15(1).png)  
  02-22-2018 | 02-23-2018 | 03-01-2018
  ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/02-22-2018--6-15(1).png) | ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/02-23-2018--6-15(1).png) | ![](https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/03-01-2018--6-15(1).png)
  03-02-2018 
