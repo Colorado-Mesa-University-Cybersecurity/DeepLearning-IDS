@@ -3,7 +3,7 @@
 ## Confusion Matrices
 Collection of confusion matrices for the following files:  
 * [x] 02-14-2018  
-* [ ] 02-15-2018 <--- Was currently running when retrieved so there was a size mismatch  
+* [x] 02-15-2018 
 * [x] 02-16-2018  
 * [x] 02-22-2018  
 * [x] 02-23-2018  
