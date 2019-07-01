@@ -85,6 +85,9 @@ Towards Developing a Network Intrusion Detection System using Deep Learning Tech
 | 03-02-2018 | Keras-Tensorflow  |    98.12     |   \*    |        \*        |
 | 03-02-2018 | Keras-Theano      |      \*      |   \*    |        \*        |
 | 03-02-2018 | Pytorch           |      \*      |   \*    |        \*        |
+|            |                   |              |         |                  |
+| Multiclass | Keras-Tensorflow  |    94.73     |   \*    |        \*        |
+| Binaryclass| Keras-Tensorflow  |    94.40     |   \*    |        \*        |
 
 # References
 
