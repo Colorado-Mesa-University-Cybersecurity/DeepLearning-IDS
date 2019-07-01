@@ -57,7 +57,7 @@ def loadData(fileName):
         df.to_pickle(pickleDump)
     return df
 
-def multiclass_baseline_model(inputDim=-1, out_shape=(-1,)):
+def baseline_model(inputDim=-1, out_shape=(-1,)):
     model = Sequential()
     if inputDim > 0 and out_shape[1] > 0:
         model.add(Dense(79, activation='relu', input_shape=(inputDim,)))
@@ -66,24 +66,16 @@ def multiclass_baseline_model(inputDim=-1, out_shape=(-1,)):
         
         model.add(Dense(out_shape[1], activation='softmax')) #This is the output layer
         
-        model.compile(optimizer='adam',
+        if out_shape[1] > 2:
+            print('Categorical Cross-Entropy Loss Function')
+            model.compile(optimizer='adam',
                      loss='categorical_crossentropy',
                      metrics=['accuracy'])
-    return model
-
-def binary_baseline_model():
-    model = Sequential()
-    model.add(Dense(79, activation='relu', input_shape=(79,)))
-    model.add(Dense(64, activation='relu'))
-    model.add(Dense(64, activation='relu'))
-    model.add(Dense(64, activation='relu'))
-    model.add(Dense(64, activation='relu'))
-    
-    model.add(Dense(2, activation='softmax')) #Output layer
-    
-    model.compile(optimizer='adam',
-                 loss='binary_crossentropy',
-                 metrics=['accuracy'])
+        else:
+            print('Binary Cross-Entropy Loss Function')
+            model.compile(optimizer='adam',
+                    loss='binary_crossentropy',
+                    metrics=['accuracy'])
     return model
 
 def load_model_csv(model_name):
@@ -124,7 +116,7 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     X_train, X_test, y_train, y_test = train_test_split(data_x, dummy_y, test_size=0.2)
     
     #create model
-    model = multiclass_baseline_model(inputDim, y_train.shape)
+    model = baseline_model(inputDim, y_train.shape)
 
     #train
     print("Training " + dataFile + "...")
