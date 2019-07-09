@@ -7,7 +7,7 @@ import operator
 
 from keras.models import Sequential, load_model
 from keras.layers import Dense, Activation
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
 from sklearn.preprocessing import LabelEncoder
 from keras.utils.np_utils import to_categorical, normalize
 from sklearn.utils import shuffle
@@ -21,6 +21,7 @@ if not os.path.exists(resultPath):
     os.mkdir(resultPath)
     
 dep_var = 'Label'
+model_name = "init"
 
 cat_names = ['Dst Port', 'Protocol']
 cont_names = ['Timestamp', 'Flow Duration', 'Tot Fwd Pkts',
@@ -58,6 +59,7 @@ def loadData(fileName):
     return df
 
 def baseline_model(inputDim=-1, out_shape=(-1,)):
+    global model_name
     model = Sequential()
     if inputDim > 0 and out_shape[1] > 0:
         model.add(Dense(79, activation='relu', input_shape=(inputDim,)))
@@ -68,26 +70,29 @@ def baseline_model(inputDim=-1, out_shape=(-1,)):
         
         if out_shape[1] > 2:
             print('Categorical Cross-Entropy Loss Function')
+            model_name += "_categorical"
             model.compile(optimizer='adam',
                      loss='categorical_crossentropy',
                      metrics=['accuracy'])
         else:
+            model_name += "_binary"
             print('Binary Cross-Entropy Loss Function')
             model.compile(optimizer='adam',
                     loss='binary_crossentropy',
                     metrics=['accuracy'])
     return model
 
-def load_model_csv(model_name):
+def load_model_csv(_model_name):
     #Change to your own path
-    model = load_model('results_keras_tensorflow/models/{}'.format(model_name))
+    model = load_model('results_keras_tensorflow/models/{}'.format(_model_name))
     return model
 
 def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     
     #Creating data for analysis
-    fn_name="multiclass_baseline_model"
-    model_name = "{}_{}_{}_{}_{}_{}".format(dataFile, optimizer, epochs, batch_size, fn_name, int(time.time()))
+    time_gen = int(time.time())
+    global model_name
+    model_name = f"{dataFile}_{time_gen}"
     #$ tensorboard --logdir=logs/
     tensorboard = TensorBoard(log_dir='logs/{}'.format(model_name))
     
@@ -113,17 +118,25 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     
   
     #Separate out data
-    X_train, X_test, y_train, y_test = train_test_split(data_x, dummy_y, test_size=0.2)
-    
-    #create model
-    model = baseline_model(inputDim, y_train.shape)
+    #X_train, X_test, y_train, y_test = train_test_split(data_x, dummy_y, test_size=0.2)
+    num=0
+    sss = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=7)
+    for train_index, test_index in sss.split(X=np.zeros(data_x.shape[0]), y=dummy_y):
+        X_train, X_test = data_x[train_index], data_x[test_index]
+        y_train, y_test = dummy_y[train_index], dummy_y[test_index]
 
-    #train
-    print("Training " + dataFile + "...")
-    model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1, callbacks=[tensorboard])
+        #create model
+        model = baseline_model(inputDim, y_train.shape)
     
-    #save model
-    model.save("{}/models/{}.model".format(resultPath, model_name))
+        #train
+        print("Training " + dataFile + " on split " + str(num))
+        model.fit(x=X_train, y=y_train, epochs=epochs, batch_size=batch_size, verbose=2, callbacks=[tensorboard], validation_data=(X_test, y_test))
+
+        #save model
+        model.save(f"{resultPath}/models/{model_name}.model")
+
+        num+=1
+    
     
     scores = model.evaluate(X_test, y_test, verbose=1)
     print(model.metrics_names)
