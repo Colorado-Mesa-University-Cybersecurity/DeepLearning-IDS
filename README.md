@@ -89,16 +89,12 @@ Towards Developing a Network Intrusion Detection System using Deep Learning Tech
 | Multiclass | Keras-Tensorflow  |    94.73     |   \*    |        \*        |
 | Binaryclass| Keras-Tensorflow  |    94.40     |   \*    |        \*        |
 
-# References
 
--   Iman Sharafaldin, Arash Habibi Lashkari, and Ali A. Ghorbani, “Toward Generating a New Intrusion Detection Dataset and Intrusion Traffic Characterization”, 4th International Conference on Information Systems Security and Privacy (ICISSP), Portugal, January 2018
 # Fast.ai Results Details
 
-`Note that this document is still under development and tests are being ran`
 
 ## Brief Results
- - These are not updated...  
- 
+
 | Data File | Accuracy | Loss |
 | --------- | -------- | ---- |
 | 02-14-2018.csv | 99.99% | 0.00212
@@ -129,13 +125,6 @@ Towards Developing a Network Intrusion Detection System using Deep Learning Tech
  | 03-01 | 28 | 73 | 10 |
  | 03-02 | 27 | 100 | <=1 |
  
+# References
 
-## Observations/Questions
-
-### **Q1:** Why are these accuracy results extremely high?
-#### **Hypothesis:** The models are overfit.
- 
-#### Training Data Size/Content Make-up
-
-### **Q2:** Why are accuracy results significantly lower for `03-01-2018.csv`?
-#### **Hypothesis:** The infiltration data in this file is extremely difficult to detect. 
+-   Iman Sharafaldin, Arash Habibi Lashkari, and Ali A. Ghorbani, “Toward Generating a New Intrusion Detection Dataset and Intrusion Traffic Characterization”, 4th International Conference on Information Systems Security and Privacy (ICISSP), Portugal, January 2018
