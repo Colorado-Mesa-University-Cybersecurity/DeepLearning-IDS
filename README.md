@@ -84,31 +84,31 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 
 ## Experiment Results
 
-### using CPU
+### Using CPU
 
 | Dataset     | Framework         | Accuracy (%) | Std-Dev | CPU Time (~mins) |
 | ----------- | ----------------- | :----------: | :-----: | :--------------: |
 | 02-14-2018  | FastAI            |    99.85     |  0.07   |        \*        |
-| 02-14-2018  | Keras-TensorFlow  |    98.80     |   \*    |        \*        |
-| 02-14-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |    98.80     |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-15-2018  | FastAI            |    99.98     |  0.01   |        25        |
-| 02-15-2018  | Keras-Tensorfflow |    99.32     |   \*    |        \*        |
-| 02-15-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-Tensorfflow |    99.32     |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-16-2018  | FastAI            |    100.00    |  0.00   |        16        |
-| 02-16-2018  | Keras-TensorFlow  |    99.84     |   \*    |        \*        |
-| 02-16-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |    99.84     |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-22-2018  | FastAI            |    99.87     |  0.15   |       110        |
-| 02-22-2018  | Keras-TensorFlow  |    99.97     |   \*    |        \*        |
-| 02-22-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |    99.97     |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-23-2018  | FastAI            |    99.92     |  0.00   |       120        |
-| 02-23-2018  | Keras-TensorFlow  |    99.94     |   \*    |        \*        |
-| 02-23-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |    99.94     |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 03-01-2018  | FastAI            |    87.00     |  0.00   |        5         |
-| 03-01-2018  | Keras-TensorFlow  |    72.20     |   \*    |        \*        |
-| 03-01-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |    72.20     |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 03-02-2018  | FastAI            |    99.97     |   .01   |        75        |
-| 03-02-2018  | Keras-TensorFlow  |    98.12     |   \*    |        \*        |
-| 03-02-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |    98.12     |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | ===         | ===               |     ===      |   ===   |       ===        |
 | Multiclass  | Keras-TensorFlow  |    94.73     |   \*    |        \*        |
 |             | Keras-Theano      |      \*      |   \*    |        \*        |
@@ -117,9 +117,9 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 |             | Keras-Theano      |      \*      |   \*    |        \*        |
 |             | FastAI            |      \*      |   \*    |        \*        |
 
-### FastAI Results Details
+### FastAI Results
 
-### Brief Results
+#### Summary Results
 
 | Data File      | Accuracy | Loss    |
 | -------------- | -------- | ------- |
@@ -131,7 +131,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | 03-01-2018.csv | 87.14%   | 0.37611 |
 | 03-02-2018.csv | 99.72%   | 0.85127 |
 
-### Confusion Matrices
+#### Confusion Matrices
 
 |                                                      02-14-2018                                                      |                                                      02-15-2018                                                      |                                                      02-16-2018                                                      |
 | :------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: |
@@ -152,31 +152,31 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | 03-01     | 28                   | 73                          | 10                           |
 | 03-02     | 27                   | 100                         | <=1                          |
 
-### using GPU
+### Using GPU
 
 | Dataset     | Framework         | Accuracy (%) | Std-Dev | GPU Time (~mins) |
 | ----------- | ----------------- | :----------: | :-----: | :--------------: |
 | 02-14-2018  | FastAI            |      \*      |   \*    |        \*        |
-| 02-14-2018  | Keras-TensorFlow  |              |   \*    |        \*        |
-| 02-14-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |              |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-15-2018  | FastAI            |              |         |                  |
-| 02-15-2018  | Keras-Tensorfflow |              |   \*    |        \*        |
-| 02-15-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-Tensorfflow |              |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-16-2018  | FastAI            |              |         |                  |
-| 02-16-2018  | Keras-TensorFlow  |              |   \*    |        \*        |
-| 02-16-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |              |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-22-2018  | FastAI            |              |         |                  |
-| 02-22-2018  | Keras-TensorFlow  |              |   \*    |        \*        |
-| 02-22-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |              |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-23-2018  | FastAI            |              |         |                  |
-| 02-23-2018  | Keras-TensorFlow  |              |   \*    |        \*        |
-| 02-23-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |              |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 03-01-2018  | FastAI            |              |         |                  |
-| 03-01-2018  | Keras-TensorFlow  |              |   \*    |        \*        |
-| 03-01-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |              |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 03-02-2018  | FastAI            |              |         |                  |
-| 03-02-2018  | Keras-TensorFlow  |              |   \*    |        \*        |
-| 03-02-2018  | Keras-Theano      |      \*      |   \*    |        \*        |
+|             | Keras-TensorFlow  |              |   \*    |        \*        |
+|             | Keras-Theano      |      \*      |   \*    |        \*        |
 | ===         | ===               |     ===      |   ===   |       ===        |
 | Multiclass  | Keras-TensorFlow  |              |   \*    |        \*        |
 |             | Keras-Theano      |      \*      |   \*    |        \*        |
