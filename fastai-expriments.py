@@ -89,6 +89,6 @@ def experimentIndividual(dataFile, epochs=5, normalize=False):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print('Usage: python fastai.py inputDataFile.csv')
+        print('Usage: python fastai-experiments.py inputDataFile.csv')
     else:
         experimentIndividual(sys.argv[1])
