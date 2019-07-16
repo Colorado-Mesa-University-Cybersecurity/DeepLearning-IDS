@@ -2,6 +2,11 @@
 
 Towards Developing a Network Intrusion Detection System using Deep Learning Techniques
 
+## Introduction
+
+In this project, we aim to explore the capabilities of various deep-learning framework in detecting
+and classifying network intursion traffic with an eye towards designing a ML-based intrusion detection system.
+
 ## Dataset
 
 -   Orginial dataset downloaded from: https://www.unb.ca/cic/datasets/ids-2018.html
@@ -22,43 +27,43 @@ Towards Developing a Network Intrusion Detection System using Deep Learning Tech
 
 | File Name      | Traffic Type     | # Samples |
 | -------------- | ---------------- | --------: |
-| 02-14-2018.csv | Benign           |    663808 |
-|                | FTP-BruteForce   |    193354 |
-|                | SSH-Bruteforce   |    187589 |
-| 02-15-2018.csv | Benign           |    988050 |
-|                | DOS-GoldenEye    |     41508 |
-|                | DOS-Slowloris    |     10990 |
-| 02-16-2018.csv | Benign           |    446772 |
-|                | Dos-SlowHTTPTest |    139890 |
-|                | DoS-Hulk         |    461912 |
-| 02-22-2018.csv | Benign           |   1042603 |
+| 02-14-2018.csv | Benign           |   663,808 |
+|                | FTP-BruteForce   |   193,354 |
+|                | SSH-Bruteforce   |   187,589 |
+| 02-15-2018.csv | Benign           |   988,050 |
+|                | DOS-GoldenEye    |    41,508 |
+|                | DOS-Slowloris    |    10,990 |
+| 02-16-2018.csv | Benign           |   446,772 |
+|                | Dos-SlowHTTPTest |   139,890 |
+|                | DoS-Hulk         |   461,912 |
+| 02-22-2018.csv | Benign           | 1,042,603 |
 |                | BruteForce-Web   |       249 |
 |                | BruteForce-XSS   |        79 |
 |                | SQL-Injection    |        34 |
-| 02-23-2018.csv | Benign           |   1042301 |
+| 02-23-2018.csv | Benign           | 1,042,301 |
 |                | BruteForce-Web   |       362 |
 |                | BruteForce-XSS   |       151 |
 |                | SQL-Injection    |        53 |
-| 03-01-2018.csv | Benign           |    235778 |
-|                | Infiltration     |     92403 |
-| 03-02-2018.csv | Benign           |    758334 |
-|                | BotAttack        |    286191 |
+| 03-01-2018.csv | Benign           |   235,778 |
+|                | Infiltration     |    92,403 |
+| 03-02-2018.csv | Benign           |   758,334 |
+|                | BotAttack        |   286,191 |
 
 | Traffic Type     | # Samples |
 | ---------------- | --------: |
-| Benign           |   5177646 |
-| FTP-BruteForce   |    193354 |
-| SSH-BruteForce   |    187589 |
-| DOS-GoldenEye    |     41508 |
-| Dos-Slowloris    |     10990 |
-| Dos-SlowHTTPTest |    139890 |
-| Dos-Hulk         |    461912 |
+| Benign           | 5,177,646 |
+| FTP-BruteForce   |   193,354 |
+| SSH-BruteForce   |   187,589 |
+| DOS-GoldenEye    |    41,508 |
+| Dos-Slowloris    |    10,990 |
+| Dos-SlowHTTPTest |   139,890 |
+| Dos-Hulk         |   461,912 |
 | BruteForce-Web   |       611 |
 | BruteForce-XSS   |       230 |
 | SQL-Injection    |        87 |
-| Infiltration     |     92403 |
-| BotAttack        |    286191 |
-| Total Attack     |   1414765 |
+| Infiltration     |    92,403 |
+| BotAttack        |   286,191 |
+| Total Attack     | 1,414,765 |
 
 # Deep Learning Frameworks
 
