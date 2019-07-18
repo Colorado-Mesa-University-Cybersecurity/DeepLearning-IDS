@@ -19,7 +19,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 -   some files had repeated headers; dropped those
 -   converted timestamp value that was date time format: 15-2-2018 to UNIX epoch since 1/1/1970
 -   separated data based on attack types for each data file
--   bout 20K rows were removed as a part of data cleanup
+-   ~20K rows were removed as a part of data cleanup
 -   see data_cleanup.py script for this phase
 
 ## Dataset Summary
