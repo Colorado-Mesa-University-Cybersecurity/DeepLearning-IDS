@@ -120,15 +120,15 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 
 #### Summary Results
 
-| Data File      | Accuracy | Loss    |
-| -------------- | -------- | ------- |
-| 02-14-2018.csv | 99.99%   | 0.00212 |
-| 02-15-2018.csv | 99.86%   | 0.02500 |
-| 02-16-2018.csv | 99.97%   | 324160  |
-| 02-22-2018.csv | 99.97%   | 0.00221 |
-| 02-23-2018.csv | 99.82%   | 0.06295 |
-| 03-01-2018.csv | 87.14%   | 0.37611 |
-| 03-02-2018.csv | 99.72%   | 0.85127 |
+| Data File      | Accuracy |    Loss |
+| -------------- | -------: | ------: |
+| 02-14-2018.csv |   99.99% | 0.00212 |
+| 02-15-2018.csv |   99.86% | 0.02500 |
+| 02-16-2018.csv |   99.97% |  324160 |
+| 02-22-2018.csv |   99.97% | 0.00221 |
+| 02-23-2018.csv |   99.82% | 0.06295 |
+| 03-01-2018.csv |   87.14% | 0.37611 |
+| 03-02-2018.csv |   99.72% | 0.85127 |
 
 #### Confusion Matrices
 
@@ -142,47 +142,47 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 ![](<https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/03-02-2018--6-15(1).png>)
 
 | Data File | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
-| --------- | -------------------- | --------------------------- | ---------------------------- |
-| 02-14     | 36                   | 100                         | <=1                          |
-| 02-15     | n/a                  | n/a                         | n/a                          |
-| 02-16     | 57                   | 100                         | <=1                          |
-| 02-22     | <=1                  | 1                           | 0                            |
-| 02-23     | <=1                  | 62                          | <=1                          |
-| 03-01     | 28                   | 73                          | 10                           |
-| 03-02     | 27                   | 100                         | <=1                          |
+| --------- | ------------------: | --------------------------: | ---------------------------: |
+| 02-14     |                  36 |                         100 |                          <=1 |
+| 02-15     |                 n/a |                         n/a |                          n/a |
+| 02-16     |                  57 |                         100 |                          <=1 |
+| 02-22     |                 <=1 |                           1 |                            0 |
+| 02-23     |                 <=1 |                          62 |                          <=1 |
+| 03-01     |                  28 |                          73 |                           10 |
+| 03-02     |                  27 |                         100 |                          <=1 |
 
 ### Using GPU
 
-| Dataset     | Framework         | Accuracy (%) | Std-Dev | GPU Time (~mins) |
-| ----------- | ----------------- | :----------: | :-----: | :--------------: |
-| 02-14-2018  | FastAI            |      \*      |   \*    |        \*        |
-|             | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-15-2018  | FastAI            |              |         |                  |
+| Dataset     | Framework        | Accuracy (%) | Std-Dev | GPU Time (~mins) |
+| ----------- | ---------------- | :----------: | :-----: | :--------------: |
+| 02-14-2018  | FastAI           |      \*      |   \*    |        \*        |
 |             | Keras-TensorFlow |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-16-2018  | FastAI            |              |         |                  |
-|             | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-22-2018  | FastAI            |              |         |                  |
-|             | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-23-2018  | FastAI            |              |         |                  |
-|             | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 03-01-2018  | FastAI            |              |         |                  |
-|             | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 03-02-2018  | FastAI            |              |         |                  |
-|             | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| ===         | ===               |     ===      |   ===   |       ===        |
-| Multiclass  | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-|             | FastAI            |      \*      |   \*    |        \*        |
-| Binaryclass | Keras-TensorFlow  |              |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-|             | FastAI            |      \*      |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+| 02-15-2018  | FastAI           |              |         |                  |
+|             | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+| 02-16-2018  | FastAI           |              |         |                  |
+|             | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+| 02-22-2018  | FastAI           |              |         |                  |
+|             | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+| 02-23-2018  | FastAI           |              |         |                  |
+|             | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+| 03-01-2018  | FastAI           |              |         |                  |
+|             | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+| 03-02-2018  | FastAI           |              |         |                  |
+|             | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+| ===         | ===              |     ===      |   ===   |       ===        |
+| Multiclass  | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+|             | FastAI           |      \*      |   \*    |        \*        |
+| Binaryclass | Keras-TensorFlow |              |   \*    |        \*        |
+|             | Keras-Theano     |      \*      |   \*    |        \*        |
+|             | FastAI           |      \*      |   \*    |        \*        |
 
 # References
 
