@@ -137,19 +137,19 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | ![](<./graphics/confusion_matrices/02-14-2018--6-15(1).png>) | ![](<./graphics/confusion_matrices/02-15-2018--6-24(1).png>) | ![](<./graphics/confusion_matrices/02-16-2018--6-15(1).png>) |
 |                                                      02-22-2018                                                      |                                                      02-23-2018                                                      |                                                      03-01-2018                                                      |
 | ![](<./graphics/confusion_matrices/02-22-2018--6-15(1).png>) | ![](<./graphics/confusion_matrices/02-23-2018--6-15(1).png>) | ![](<./graphics/confusion_matrices/03-01-2018--6-15(1).png>) |
-
 03-02-2018
 ![](<./graphics/confusion_matrices/03-02-2018--6-15(1).png>)
 
 | Data File  | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
 | ---------- | ------------------: | --------------------------: | ---------------------------: |
-| 02-14-2018 |                  36 |                         100 |                          <=1 |
-| 02-15-2018 |                   5 |                          98 |                            0 |
-| 02-16-2018 |                  57 |                         100 |                          <=1 |
-| 02-22-2018 |                 <=1 |                           1 |                            0 |
-| 02-23-2018 |                 <=1 |                          62 |                          <=1 |
-| 03-01-2018 |                  28 |                          73 |                           10 |
-| 03-02-2018 |                  27 |                         100 |                          <=1 |
+| 02-14-2018 |                  36.46 |                         100.00 |                          0.00\* |
+| 02-15-2018 |                   5.04 |                          99.85 |                            0.00\* |
+| 02-16-2018 |                  57.39 |                         100.00 |                          0.00\* |
+| 02-22-2018 |                 0.00* |                           0.02 |                            0.00 |
+| 02-23-2018 |                 0.00* |                          61.61 |                          0.00\* |
+| 03-01-2018 |                  28.16 |                          73.19 |                           10.16 |
+| 03-02-2018 |                  27.40 |                         99.85 |                          0.00\* |
+\* Small, non-zero values
 
 ### Using GPU
 
