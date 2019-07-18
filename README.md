@@ -9,10 +9,9 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 
 ## Dataset
 
--   Orginial dataset downloaded from: https://www.unb.ca/cic/datasets/ids-2018.html
--   once the dataset was downloaded using AWS CLI as instructed in the source, there were 7 csv files that were preprocessed and labelled
--   there were also original network traffic data in .pcap format and logs that are ignored for this study
--   this project uses the dataset remained after cleanup
+-   Downloaded from: https://www.unb.ca/cic/datasets/ids-2018.html
+-   contains: 7 csv preprocessed and labelled files, top feature selected files, orginal traffic data in pcap format and logs
+-   used csv preprocessed and labelled files for this research project
 
 ## Data Cleanup
 
@@ -142,7 +141,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 03-02-2018
 ![](<https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/03-02-2018--6-15(1).png>)
 
-| Data File | % of Data == Attacks | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
+| Data File | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
 | --------- | -------------------- | --------------------------- | ---------------------------- |
 | 02-14     | 36                   | 100                         | <=1                          |
 | 02-15     | n/a                  | n/a                         | n/a                          |
@@ -160,7 +159,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 |             | Keras-TensorFlow  |              |   \*    |        \*        |
 |             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-15-2018  | FastAI            |              |         |                  |
-|             | Keras-Tensorfflow |              |   \*    |        \*        |
+|             | Keras-TensorFlow |              |   \*    |        \*        |
 |             | Keras-Theano      |      \*      |   \*    |        \*        |
 | 02-16-2018  | FastAI            |              |         |                  |
 |             | Keras-TensorFlow  |              |   \*    |        \*        |
