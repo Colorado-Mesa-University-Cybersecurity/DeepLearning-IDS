@@ -86,35 +86,35 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 ### Using CPU
 
 | Dataset     | Framework         | Accuracy (%) | Std-Dev | CPU Time (~mins) |
-| ----------- | ----------------- | :----------: | :-----: | :--------------: |
-| 02-14-2018  | FastAI            |    99.85     |  0.07   |        \*        |
-|             | Keras-TensorFlow  |    98.80     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-15-2018  | FastAI            |    99.98     |  0.01   |        25        |
-|             | Keras-Tensorfflow |    99.32     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-16-2018  | FastAI            |    100.00    |  0.00   |        16        |
-|             | Keras-TensorFlow  |    99.84     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-22-2018  | FastAI            |    99.87     |  0.15   |       110        |
-|             | Keras-TensorFlow  |    99.97     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 02-23-2018  | FastAI            |    99.92     |  0.00   |       120        |
-|             | Keras-TensorFlow  |    99.94     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 03-01-2018  | FastAI            |    87.00     |  0.00   |        5         |
-|             | Keras-TensorFlow  |    72.20     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| 03-02-2018  | FastAI            |    99.97     |   .01   |        75        |
-|             | Keras-TensorFlow  |    98.12     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-| ===         | ===               |     ===      |   ===   |       ===        |
-| Multiclass  | Keras-TensorFlow  |    94.73     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-|             | FastAI            |      \*      |   \*    |        \*        |
-| Binaryclass | Keras-TensorFlow  |    94.40     |   \*    |        \*        |
-|             | Keras-Theano      |      \*      |   \*    |        \*        |
-|             | FastAI            |      \*      |   \*    |        \*        |
+| ----------- | ----------------- | -----------: | ------: | ---------------: |
+| 02-14-2018  | FastAI            |        99.85 |    0.07 |               \* |
+|             | Keras-TensorFlow  |        98.80 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+| 02-15-2018  | FastAI            |        99.98 |    0.01 |               25 |
+|             | Keras-Tensorfflow |        99.32 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+| 02-16-2018  | FastAI            |       100.00 |    0.00 |               16 |
+|             | Keras-TensorFlow  |        99.84 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+| 02-22-2018  | FastAI            |        99.87 |    0.15 |              110 |
+|             | Keras-TensorFlow  |        99.97 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+| 02-23-2018  | FastAI            |        99.92 |    0.00 |              120 |
+|             | Keras-TensorFlow  |        99.94 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+| 03-01-2018  | FastAI            |        87.00 |    0.00 |                5 |
+|             | Keras-TensorFlow  |        72.20 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+| 03-02-2018  | FastAI            |        99.97 |     .01 |               75 |
+|             | Keras-TensorFlow  |        98.12 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+| ===         | ===               |          === |     === |              === |
+| Multiclass  | Keras-TensorFlow  |        94.73 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+|             | FastAI            |           \* |      \* |               \* |
+| Binaryclass | Keras-TensorFlow  |        94.40 |      \* |               \* |
+|             | Keras-Theano      |           \* |      \* |               \* |
+|             | FastAI            |           \* |      \* |               \* |
 
 ### FastAI Results
 
@@ -141,15 +141,15 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 03-02-2018
 ![](<https://github.com/rambasnet/DeepLearning-IDS/blob/master/graphics/confusion_matrices/03-02-2018--6-15(1).png>)
 
-| Data File | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
-| --------- | ------------------: | --------------------------: | ---------------------------: |
-| 02-14     |                  36 |                         100 |                          <=1 |
-| 02-15     |                 5 |                         98 |                          0 |
-| 02-16     |                  57 |                         100 |                          <=1 |
-| 02-22     |                 <=1 |                           1 |                            0 |
-| 02-23     |                 <=1 |                          62 |                          <=1 |
-| 03-01     |                  28 |                          73 |                           10 |
-| 03-02     |                  27 |                         100 |                          <=1 |
+| Data File  | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
+| ---------- | ------------------: | --------------------------: | ---------------------------: |
+| 02-14-2018 |                  36 |                         100 |                          <=1 |
+| 02-15-2018 |                   5 |                          98 |                            0 |
+| 02-16-2018 |                  57 |                         100 |                          <=1 |
+| 02-22-2018 |                 <=1 |                           1 |                            0 |
+| 02-23-2018 |                 <=1 |                          62 |                          <=1 |
+| 03-01-2018 |                  28 |                          73 |                           10 |
+| 03-02-2018 |                  27 |                         100 |                          <=1 |
 
 ### Using GPU
 
