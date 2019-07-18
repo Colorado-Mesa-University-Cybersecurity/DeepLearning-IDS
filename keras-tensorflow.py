@@ -12,6 +12,7 @@ from sklearn.preprocessing import LabelEncoder
 from keras.utils.np_utils import to_categorical, normalize
 from sklearn.utils import shuffle
 from tensorflow.keras.callbacks import TensorBoard
+from timeit import default_timer as timer
 import time
 
 dataPath = 'CleanedTrafficData'
@@ -121,6 +122,7 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     #X_train, X_test, y_train, y_test = train_test_split(data_x, dummy_y, test_size=0.2)
     num=0
     sss = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=7)
+    start = timer()
     for train_index, test_index in sss.split(X=np.zeros(data_x.shape[0]), y=dummy_y):
         X_train, X_test = data_x[train_index], data_x[test_index]
         y_train, y_test = dummy_y[train_index], dummy_y[test_index]
@@ -136,8 +138,9 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
         model.save(f"{resultPath}/models/{model_name}.model")
 
         num+=1
-    
-    
+
+    elapsed = timer() - start
+
     scores = model.evaluate(X_test, y_test, verbose=1)
     print(model.metrics_names)
     acc, loss = scores[1]*100, scores[0]*100
@@ -146,7 +149,8 @@ def experiment(dataFile, optimizer='adam', epochs=10, batch_size=10):
     resultFile = os.path.join(resultPath, dataFile)
     with open('{}.result'.format(resultFile), 'a') as fout:
         fout.write('{} results...'.format(model_name))
-        fout.write('\taccuracy: {:.2f} loss: {:.2f}\n'.format(acc, loss))
+        fout.write('\taccuracy: {:.2f} loss: {:.2f}'.format(acc, loss))
+        fout.write('\telapsed time: {:.2f} sec\n'.format(elapsed))
         
 if __name__ == "__main__":
     if len(sys.argv) < 2:
