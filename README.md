@@ -144,7 +144,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | Data File | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
 | --------- | ------------------: | --------------------------: | ---------------------------: |
 | 02-14     |                  36 |                         100 |                          <=1 |
-| 02-15     |                 n/a |                         n/a |                          n/a |
+| 02-15     |                 5 |                         98 |                          0 |
 | 02-16     |                  57 |                         100 |                          <=1 |
 | 02-22     |                 <=1 |                           1 |                            0 |
 | 02-23     |                 <=1 |                          62 |                          <=1 |
