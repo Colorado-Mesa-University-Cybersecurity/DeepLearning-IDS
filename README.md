@@ -132,14 +132,13 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 
 #### Confusion Matrices
 
-|                          02-14-2018                          |                          02-15-2018                          |                          02-16-2018                          |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![](<./graphics/confusion_matrices/02-14-2018--6-15(1).png>) | ![](<./graphics/confusion_matrices/02-15-2018--6-24(1).png>) | ![](<./graphics/confusion_matrices/02-16-2018--6-15(1).png>) |
-|                          02-22-2018                          |                          02-23-2018                          |                          03-01-2018                          |
-| ![](<./graphics/confusion_matrices/02-22-2018--6-15(1).png>) | ![](<./graphics/confusion_matrices/02-23-2018--6-15(1).png>) | ![](<./graphics/confusion_matrices/03-01-2018--6-15(1).png>) |
-
-| 03-02-2018 | IDS-2018-binaryclass | IDS-2018-multiclass |
-|![](<./graphics/confusion_matrices/03-02-2018--6-15(1).png>) | ![](./graphics/confusion_matrices/IDS-2018-binaryclass-matrix.png) | ![](./graphics/confusion_matrices/IDS-2018-multiclass-matrix.png) |
+|                          02-14-2018                          |                             02-15-2018                             |                            02-16-2018                             |
+| :----------------------------------------------------------: | :----------------------------------------------------------------: | :---------------------------------------------------------------: |
+| ![](<./graphics/confusion_matrices/02-14-2018--6-15(1).png>) |    ![](<./graphics/confusion_matrices/02-15-2018--6-24(1).png>)    |   ![](<./graphics/confusion_matrices/02-16-2018--6-15(1).png>)    |
+|                          02-22-2018                          |                             02-23-2018                             |                            03-01-2018                             |
+| ![](<./graphics/confusion_matrices/02-22-2018--6-15(1).png>) |    ![](<./graphics/confusion_matrices/02-23-2018--6-15(1).png>)    |   ![](<./graphics/confusion_matrices/03-01-2018--6-15(1).png>)    |
+|                          03-02-2018                          |                        IDS-2018-binaryclass                        |                        IDS-2018-multiclass                        |
+| ![](<./graphics/confusion_matrices/03-02-2018--6-15(1).png>) | ![](./graphics/confusion_matrices/IDS-2018-binaryclass-matrix.png) | ![](./graphics/confusion_matrices/IDS-2018-multiclass-matrix.png) |
 
 | Data File  | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
 | ---------- | ------------------: | --------------------------: | ---------------------------: |
