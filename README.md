@@ -129,6 +129,8 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | 02-23-2018.csv |   99.82% | 0.06295 |
 | 03-01-2018.csv |   87.14% | 0.37611 |
 | 03-02-2018.csv |   99.72% | 0.85127 |
+| IDS-2018-binaryclass.csv | 98.68% | 0.37692 |
+| IDS-2018-multiclass.csv | 98.31% | 7.06169 |  
 
 #### Confusion Matrices
 
