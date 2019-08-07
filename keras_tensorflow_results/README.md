@@ -1,8 +1,6 @@
 # Keras-TensorFlow Results
 
-Files with suffix "-2" were from Machine#2
-
-### Machine #1
+### Salamander Cloud
 
 | File | Model Timestamp |  Accuracy | Loss |
 | --------- |--------- | -------- | ---- |
@@ -13,19 +11,19 @@ Files with suffix "-2" were from Machine#2
 | 02-23-2018.csv | 1561316601 | 99.94% | 0.95
 | 03-01-2018.csv | 1561319474 | 72.20% | 58.50
 | 03-02-2018.csv | 1561320389 | 98.12% | 6.18
-| IDS-2018-binaryclass.csv | 1562710091 | 94.86% | 17.50 
-| IDS-2018-multiclass.csv | 1562730145 | 95.00% | 16.84 
+| IDS-2018-binaryclass.csv | - | - | - 
+| IDS-2018-multiclass.csv | - | - | - 
 
-### Machine #2
+### VMgpu
 
 | File | Model Timestamp |  Accuracy | Loss |
 | --------- |--------- | -------- | ---- |
-| 02-14-2018.csv | 1562716033 | 97.19% | 6.07
-| 02-15-2018.csv | 1562716001 | 99.29% | 2.21
-| 02-16-2018.csv | 1562720141 | 99.73% | 1.20
-| 02-22-2018.csv | 1562720142 | 99.97% | 0.56
-| 02-23-2018.csv | 1562723082 | 99.95% | 0.44
-| 03-01-2018.csv | 1562723082 | 72.06% | 58.81
-| 03-02-2018.csv | 1562725688 | 98.67% | 7.01
-| IDS-2018-binaryclass.csv | 1562864110 | 95.13% | 19.62 
-| IDS-2018-multiclass.csv | 1562792120 | 94.58% | 17.26 
+| 02-14-2018.csv | - | - | -
+| 02-15-2018.csv | - | - | -
+| 02-16-2018.csv | - | - | -
+| 02-22-2018.csv | - | - | -
+| 02-23-2018.csv | - | - | -
+| 03-01-2018.csv | - | - | -
+| 03-02-2018.csv | - | - | -
+| IDS-2018-binaryclass.csv | - | - | - 
+| IDS-2018-multiclass.csv | - | - | -
