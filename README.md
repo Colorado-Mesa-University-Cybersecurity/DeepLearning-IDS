@@ -154,38 +154,38 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 
 \* Small, non-zero values
 
-### Using GPU
+### Using GPU (VMgpu)
 
 | Dataset     | Framework        | Accuracy (%) | Std-Dev | GPU Time (~mins) |
 | ----------- | ---------------- | :----------: | :-----: | :--------------: |
-| 02-14-2018  | FastAI           |      \*      |   \*    |        \*        |
-|             | Keras-TensorFlow |              |   \*    |        \*        |
+| 02-14-2018  | FastAI           |         99.54|     0.32|            100.36|
+|             | Keras-TensorFlow |         99.14|   \*    |            100.29|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-| 02-15-2018  | FastAI           |              |         |                  |
-|             | Keras-TensorFlow |              |   \*    |        \*        |
+| 02-15-2018  | FastAI           |         99.98|     0.01|            103.16|
+|             | Keras-TensorFlow |         99.33|   \*    |             96.34|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-| 02-16-2018  | FastAI           |              |         |                  |
-|             | Keras-TensorFlow |              |   \*    |        \*        |
+| 02-16-2018  | FastAI           |         99.66|     0.25|            104.51|
+|             | Keras-TensorFlow |         99.66|   \*    |             99.59|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-| 02-22-2018  | FastAI           |              |         |                  |
-|             | Keras-TensorFlow |              |   \*    |        \*        |
+| 02-22-2018  | FastAI           |         99.90|     0.09|            102.83|
+|             | Keras-TensorFlow |         99.97|   \*    |             96.71|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-| 02-23-2018  | FastAI           |              |         |                  |
-|             | Keras-TensorFlow |              |   \*    |        \*        |
+| 02-23-2018  | FastAI           |         99.88|     0.08|            104.43|
+|             | Keras-TensorFlow |         95.95|   \*    |            100.79|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-| 03-01-2018  | FastAI           |              |         |                  |
-|             | Keras-TensorFlow |              |   \*    |        \*        |
+| 03-01-2018  | FastAI           |         86.47|     0.78|             33.23|
+|             | Keras-TensorFlow |         72.16|   \*    |             33.15|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-| 03-02-2018  | FastAI           |              |         |                  |
-|             | Keras-TensorFlow |              |   \*    |        \*        |
+| 03-02-2018  | FastAI           |         99.94|     0.04|            104.34|
+|             | Keras-TensorFlow |         98.47|   \*    |            105.95|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
 | ===         | ===              |     ===      |   ===   |       ===        |
-| Multiclass  | Keras-TensorFlow |              |   \*    |        \*        |
+| Multiclass  | FastAI           |         98.60|     0.16|            683.12|
+|             | Keras-TensorFlow |         92.09|   \*    |            652.89|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-|             | FastAI           |      \*      |   \*    |        \*        |
-| Binaryclass | Keras-TensorFlow |              |   \*    |        \*        |
+| Binaryclass | FastAI           |         98.75|     0.05|            675.98|
+|             | Keras-TensorFlow |         95.14|   \*    |            632.36|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
-|             | FastAI           |      \*      |   \*    |        \*        |
 
 # References
 
