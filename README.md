@@ -83,9 +83,9 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 
 ## Experiment Results
 
-### Using CPU
+### Using Salamander.ai
 
-| Dataset     | Framework         | Accuracy (%) | Std-Dev | CPU Time (~mins) |
+| Dataset     | Framework         | Accuracy (%) | Std-Dev | GPU Time (~mins) |
 | ----------- | ----------------- | -----------: | ------: | ---------------: |
 | 02-14-2018  | FastAI            |        99.85 |    0.07 |               \* |
 |             | Keras-TensorFlow  |        98.80 |      \* |               \* |
@@ -129,8 +129,10 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | 02-23-2018.csv |   99.82% | 0.06295 |
 | 03-01-2018.csv |   87.14% | 0.37611 |
 | 03-02-2018.csv |   99.72% | 0.85127 |
-| IDS-2018-binaryclass.csv | 98.68% | 0.37692 |
-| IDS-2018-multiclass.csv | 98.31% | 7.06169 |  
+| IDS-2018-binaryclass.csv\* | 98.68% | 0.37692 |
+| IDS-2018-multiclass.csv\* | 98.31% | 7.06169 |
+
+\* Trained on VMgpu
 
 #### Confusion Matrices
 
@@ -154,7 +156,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 
 \* Small, non-zero values
 
-### Using GPU (VMgpu)
+### Using VMgpu
 
 | Dataset     | Framework        | Accuracy (%) | Std-Dev | GPU Time (~mins) |
 | ----------- | ---------------- | :----------: | :-----: | :--------------: |
@@ -186,6 +188,39 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | Binaryclass | FastAI           |         98.75|     0.05|            675.98|
 |             | Keras-TensorFlow |         95.14|   \*    |            632.36|
 |             | Keras-Theano     |      \*      |   \*    |        \*        |
+
+### fastai CPU vs GPU training time on vmGPU
+
+| Dataset     | Hardware | Time (~mins) |
+| ----------- | -------- | :----------: |
+| 02-14-2018  |          |              |
+|             | CPU      |       1193.84|
+|             | GPU      |        100.36|
+| 02-15-2018  |          |              |
+|             | CPU      |       1299.55|   
+|             | GPU      |        103.16|       
+| 02-16-2018  |          |              |
+|             | CPU      |        433.63|
+|             | GPU      |        104.51|
+| 02-22-2018  |          |              |
+|             | CPU      |       3091.34|
+|             | GPU      |        102.83|
+| 02-23-2018  |          |              |
+|             | CPU      |   IN PROGRESS|
+|             | GPU      |        104.43|           
+| 03-01-2018  |          |              |
+|             | CPU      |            \*|
+|             | GPU      |         33.23|     
+| 03-02-2018  |          |              |
+|             | CPU      |            \*|
+|             | GPU      |        104.34|   
+| ===         | ===      | ===          |
+| Multiclass  |          |              |
+|             | CPU      |            \*|
+|             | GPU      |        683.12|     
+| Binaryclass |          |              |
+|             | CPU      |            \*|
+|             | GPU      |        632.36|     
 
 # References
 
