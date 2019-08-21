@@ -10,7 +10,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 ## Dataset
 
 -   Downloaded from: https://www.unb.ca/cic/datasets/ids-2018.html
--   contains: 7 csv preprocessed and labelled files, top feature selected files, orginal traffic data in pcap format and logs
+-   contains: 7 csv preprocessed and labelled files, top feature selected files, original traffic data in pcap format and logs
 -   used csv preprocessed and labelled files for this research project
 
 ## Data Cleanup
