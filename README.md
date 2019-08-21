@@ -206,20 +206,20 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 |             | CPU      |       3091.34|
 |             | GPU      |        102.83|
 | 02-23-2018  |          |              |
-|             | CPU      |   IN PROGRESS|
+|             | CPU      |       1938.74|
 |             | GPU      |        104.43|           
 | 03-01-2018  |          |              |
-|             | CPU      |            \*|
+|             | CPU      |         80.07|
 |             | GPU      |         33.23|     
 | 03-02-2018  |          |              |
-|             | CPU      |            \*|
+|             | CPU      |       1503.18|
 |             | GPU      |        104.34|   
 | ===         | ===      | ===          |
 | Multiclass  |          |              |
 |             | CPU      |            \*|
 |             | GPU      |        683.12|     
 | Binaryclass |          |              |
-|             | CPU      |            \*|
+|             | CPU      |   IN PROGRESS|
 |             | GPU      |        632.36|     
 
 # References

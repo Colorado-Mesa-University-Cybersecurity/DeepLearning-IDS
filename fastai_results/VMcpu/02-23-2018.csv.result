@@ -1,0 +1,5 @@
+accuracy: 99.94 std-dev: 0.00 elapsed time: 23143.96 sec
+accuracy: 99.80 std-dev: 0.14 elapsed time: 46500.73 sec
+accuracy: 99.83 std-dev: 0.13 elapsed time: 69728.35 sec
+accuracy: 99.86 std-dev: 0.12 elapsed time: 93057.85 sec
+accuracy: 99.83 std-dev: 0.12 elapsed time: 116324.69 sec
