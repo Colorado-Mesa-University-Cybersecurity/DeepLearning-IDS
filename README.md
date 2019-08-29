@@ -144,6 +144,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 |                          03-02-2018                          |                        IDS-2018-binaryclass                        |                        IDS-2018-multiclass                        |
 | ![](<./graphics/confusion_matrices/03-02-2018--6-15(1).png>) | ![](./graphics/confusion_matrices/IDS-2018-binaryclass-matrix.png) | ![](./graphics/confusion_matrices/IDS-2018-multiclass-matrix.png) |
 
+### Attack Sample Distribution and Classification Accuracy
 | Data File  | % of Attack Samples | % Attacks Flagged Correctly | % Benign Flagged Incorrectly |
 | ---------- | ------------------: | --------------------------: | ---------------------------: |
 | 02-14-2018 |               36.46 |                      100.00 |                       0.00\* |
@@ -153,6 +154,8 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | 02-23-2018 |              0.00\* |                       61.61 |                       0.00\* |
 | 03-01-2018 |               28.16 |                       73.19 |                        10.16 |
 | 03-02-2018 |               27.40 |                       99.85 |                       0.00\* |
+| Binary-Classs | * | * | * |
+| Multi-Class | * | * | * |
 
 \* Small, non-zero values
 
