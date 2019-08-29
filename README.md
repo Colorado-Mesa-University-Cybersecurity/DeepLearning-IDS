@@ -21,32 +21,33 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 -   separated data based on attack types for each data file
 -   ~20K rows were removed as a part of data cleanup
 -   see data_cleanup.py script for this phase
+-   \# Samples in table below are total samples left in each dataset after dropping # Dropped rows/samples
 
 ## Dataset Summary
 
-| File Name      | Traffic Type     | # Samples |
-| -------------- | ---------------- | --------: |
-| 02-14-2018.csv | Benign           |   663,808 |
-|                | FTP-BruteForce   |   193,354 |
-|                | SSH-Bruteforce   |   187,589 |
-| 02-15-2018.csv | Benign           |   988,050 |
-|                | DOS-GoldenEye    |    41,508 |
-|                | DOS-Slowloris    |    10,990 |
-| 02-16-2018.csv | Benign           |   446,772 |
-|                | Dos-SlowHTTPTest |   139,890 |
-|                | DoS-Hulk         |   461,912 |
-| 02-22-2018.csv | Benign           | 1,042,603 |
-|                | BruteForce-Web   |       249 |
-|                | BruteForce-XSS   |        79 |
-|                | SQL-Injection    |        34 |
-| 02-23-2018.csv | Benign           | 1,042,301 |
-|                | BruteForce-Web   |       362 |
-|                | BruteForce-XSS   |       151 |
-|                | SQL-Injection    |        53 |
-| 03-01-2018.csv | Benign           |   235,778 |
-|                | Infiltration     |    92,403 |
-| 03-02-2018.csv | Benign           |   758,334 |
-|                | BotAttack        |   286,191 |
+| File Name      | Traffic Type     | # Samples | # Dropped |
+| -------------- | ---------------- | --------: | :-------- |
+| 02-14-2018.csv | Benign           |   663,808 | 3818      |
+|                | FTP-BruteForce   |   193,354 | 6         |
+|                | SSH-Bruteforce   |   187,589 | 0         |
+| 02-15-2018.csv | Benign           |   988,050 | 8027      |
+|                | DOS-GoldenEye    |    41,508 | 0         |
+|                | DOS-Slowloris    |    10,990 | 0         |
+| 02-16-2018.csv | Benign           |   446,772 | 0         |
+|                | Dos-SlowHTTPTest |   139,890 | 0         |
+|                | DoS-Hulk         |   461,912 | 0         |
+| 02-22-2018.csv | Benign           | 1,042,603 | 5610      |
+|                | BruteForce-Web   |       249 | 0         |
+|                | BruteForce-XSS   |        79 | 0         |
+|                | SQL-Injection    |        34 | 0         |
+| 02-23-2018.csv | Benign           | 1,042,301 | 5708      |
+|                | BruteForce-Web   |       362 | 0         |
+|                | BruteForce-XSS   |       151 | 0         |
+|                | SQL-Injection    |        53 | 0         |
+| 03-01-2018.csv | Benign           |   235,778 | 2259      |
+|                | Infiltration     |    92,403 | 660       |
+| 03-02-2018.csv | Benign           |   758,334 | 4050      |
+|                | BotAttack        |   286,191 | 0         |
 
 | Traffic Type     | # Samples |
 | ---------------- | --------: |
