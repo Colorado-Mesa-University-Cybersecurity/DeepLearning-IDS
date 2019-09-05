@@ -224,7 +224,7 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 |             | CPU      |      \*      |
 |             | GPU      |    683.12    |
 | Binaryclass |          |              |
-|             | CPU      | IN PROGRESS  |
+|             | CPU      |  19441.55    |
 |             | GPU      |    632.36    |
 
 # References
