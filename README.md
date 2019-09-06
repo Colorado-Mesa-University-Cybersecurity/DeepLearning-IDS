@@ -156,8 +156,8 @@ and classifying network intursion traffic with an eye towards designing a ML-bas
 | 02-23-2018    |              0.00\* |                       61.61 |                       0.00\* |
 | 03-01-2018    |               28.16 |                       73.19 |                        10.16 |
 | 03-02-2018    |               27.40 |                       99.85 |                       0.00\* |
-| Binary-Classs |                  \* |                          \* |                           \* |
-| Multi-Class   |                  \* |                          \* |                           \* |
+| Binary-Classs |                  21.50 |                          94.60 |                           0.21 |
+| Multi-Class   |                  21.50 |                          93.9 |                           99.5 |
 
 \* Small, non-zero values
 
